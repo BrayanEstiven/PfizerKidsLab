@@ -1,0 +1,41 @@
+﻿@model PfizerKidsLab.auxiliar
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>auxiliar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tarjetaProfesional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarjetaProfesional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.persona.identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.persona.identificacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

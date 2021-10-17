@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PfizerKidsLab.vacuna>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Crear Nueva Vacuna Pfizer Kids</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaVencimiento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaVencimiento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idVacuna }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idVacuna }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idVacuna })
+        </td>
+    </tr>
+}
+
+</table>

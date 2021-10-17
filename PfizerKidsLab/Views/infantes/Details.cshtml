@@ -1,0 +1,43 @@
+﻿@model PfizerKidsLab.infante
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>infante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroVacunacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroVacunacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.persona.identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.persona.identificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idInfante }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

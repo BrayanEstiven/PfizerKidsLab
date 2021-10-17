@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PfizerKidsLab.auxiliar>
+
+@{
+    ViewBag.Title = "Registro de Auxiliares";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>REGISTRAR AUXILIAR VACUNADOR</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tarjetaProfesional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.persona.identificacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tarjetaProfesional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.persona.identificacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idAuxiliar }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idAuxiliar }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idAuxiliar })
+        </td>
+    </tr>
+}
+
+</table>

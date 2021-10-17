@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PfizerKidsLab.citaVacuna>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>REGISTRAR CITA PARA VACUNAR INFANTE</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.auxiliar.tarjetaProfesional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.infante.eps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vacuna.modelo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.auxiliar.tarjetaProfesional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.infante.eps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vacuna.modelo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idCitaVacuna }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idCitaVacuna }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idCitaVacuna })
+        </td>
+    </tr>
+}
+
+</table>

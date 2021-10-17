@@ -1,0 +1,35 @@
+﻿@model PfizerKidsLab.auxiliar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>auxiliar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tarjetaProfesional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarjetaProfesional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.persona.identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.persona.identificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAuxiliar }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
